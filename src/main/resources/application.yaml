@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: app-server
+
+
+logging:
+  level:
+    root: INFO
+    com.erojas.lab.appserver: DEBUG
