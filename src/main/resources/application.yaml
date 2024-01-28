@@ -1,9 +1,12 @@
 server:
   port: 8081
+  shutdown: graceful
 
 spring:
   application:
     name: app-server
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
 
 logging:
   level:
@@ -11,10 +14,21 @@ logging:
     com.erojas.lab.appserver: DEBUG
 
 ---
+
 spring:
   config:
     activate:
       on-profile: docker
+
+server:
+  port: 8080
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: k8s
 
 server:
   port: 8080
