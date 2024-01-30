@@ -8,6 +8,9 @@ spring:
   lifecycle:
     timeout-per-shutdown-phase: 15s
 
+services:
+  profile: localhost
+
 management:
   endpoints:
         web:
